@@ -1,6 +1,12 @@
 {
-  "name": "johnpbloch/wordpress",
-  "description": "WordPress is web software you can use to create a beautiful website or blog.",
+  "name": "imonroe/wordpress",
+  "description": "WordPress, customized to work with composer and wpackagist.org for composer control.",
+  "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
   "keywords": [
     "wordpress",
     "blog",
@@ -25,6 +31,9 @@
   "require": {
     "php": ">=5.3.2",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "johnpbloch/wordpress-core": "dev-master"
+    "johnpbloch/wordpress-core": "dev-master",
+    "wpackagist-plugin/akismet":"dev-trunk",
+    "wpackagist-plugin/captcha":">=3.9",
+    "wpackagist-theme/hueman":"*"
   }
 }
