@@ -1,59 +1,51 @@
 {
   "name": "imonroe/wordpress",
-  "description": "WordPress, customized to work with composer and wpackagist.org for composer control.",
-  "repositories":[
-        {
-            "type":"composer",
-            "url":"https://wpackagist.org"
-        }
-    ],
-  "keywords": [
-    "wordpress",
-    "blog",
-    "cms"
-  ],
-  "type": "package",
-  "homepage": "http://wordpress.org/",
-  "license": "GPL-2.0+",
+  "description": "A basic wordpress starter config.",
   "authors": [
     {
-      "name": "WordPress Community",
-      "homepage": "http://wordpress.org/about/"
+        "name": "Ian Monroe",
+        "email": "ian@ianmonroe.com"
     }
   ],
-  "support": {
-    "issues": "http://core.trac.wordpress.org/",
-    "forum": "http://wordpress.org/support/",
-    "wiki": "http://codex.wordpress.org/",
-    "irc": "irc://irc.freenode.net/wordpress",
-    "source": "http://core.trac.wordpress.org/browser"
-  },
-  "require": {
-    "php": ">=5.3.2",
-    "mnsami/composer-custom-directory-installer": "1.1.*",
-    "johnpbloch/wordpress-core-installer": "^1.0",
-    "johnpbloch/wordpress-core": "dev-master",
-    "wpackagist-plugin/akismet":"dev-trunk",
-    "wpackagist-plugin/captcha":">=3.9",
-    "wpackagist-plugin/wordfence": "6.3.*",
-    "wpackagist-plugin/woocommerce": "3.1.*",
-    "wpackagist-plugin/tailor": "dev-trunk",
-    "wpackagist-plugin/tailor-advanced": "dev-trunk",
-    "wpackagist-plugin/tailor-portfolio": "dev-trunk",
-    "wpackagist-plugin/tailor-woocommerce": "dev-trunk",
-    "wpackagist-theme/wp-bootstrap-starter": "2.4.8"
-  },
-  "extra":{
-    "installer-paths":{
-      "./wordpress/": ["wpackagist-plugin/akismet"],
-      "./wordpress/": ["wpackagist-plugin/captcha"],
-      "./wordpress/": ["wpackagist-plugin/wordfence"],
-      "./wordpress/": ["wpackagist-plugin/woocommerce"],
-      "./wordpress/": ["wpackagist-plugin/tailor"],
-      "./wordpress/": ["wpackagist-plugin/tailor-advanced"],
-      "./wordpress/": ["wpackagist-plugin/tailor-portfolio"],
-      "./wordpress/": ["wpackagist-plugin/tailor-woocommerce"],
-      "./wordpress/": ["wpackagist-theme/wp-bootstrap-starter"]
+  "repositories": [
+    {
+        "type": "composer",
+        "url": "http://wpackagist.org"
+    },
+	{
+        "type":"composer",
+        "url":"https://wpackagist.org"
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "wordpress",
+            "type": "webroot",
+            "version": "latest",
+            "dist": {
+                "type": "zip",
+                "url": "https://wordpress.org/latest.zip"
+            }
+        }
     }
-  }
+ ],
+    "require": {
+      "php": ">=5.3.0",
+      "composer/installers": "~1.0",
+      "wordpress": "latest",
+	    "wpackagist-plugin/akismet":"dev-trunk",
+      "wpackagist-plugin/captcha":">=3.9",
+      "wpackagist-plugin/wordfence": "6.3.*",
+      "wpackagist-plugin/woocommerce": "3.1.*",
+      "wpackagist-plugin/tailor": "dev-trunk",
+      "wpackagist-plugin/tailor-advanced": "dev-trunk",
+      "wpackagist-plugin/tailor-portfolio": "dev-trunk",
+      "wpackagist-plugin/tailor-woocommerce": "dev-trunk",
+      "wpackagist-theme/wp-bootstrap-starter": "2.4.8"
+    },
+    "extra": {
+        "webroot-dir": ".",
+        "webroot-package": "wordpress"
+    }
+
 }
