@@ -30,20 +30,30 @@
   },
   "require": {
     "php": ">=5.3.2",
+    "mnsami/composer-custom-directory-installer": "1.1.*",
     "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "dev-master",
     "wpackagist-plugin/akismet":"dev-trunk",
     "wpackagist-plugin/captcha":">=3.9",
-    "wpackagist-plugin/wordfence": "6.3.15",
-    "wpackagist-plugin/woocommerce": "3.1.1",
+    "wpackagist-plugin/wordfence": "6.3.*",
+    "wpackagist-plugin/woocommerce": "3.1.*",
     "wpackagist-plugin/tailor": "dev-trunk",
     "wpackagist-plugin/tailor-advanced": "dev-trunk",
     "wpackagist-plugin/tailor-portfolio": "dev-trunk",
     "wpackagist-plugin/tailor-woocommerce": "dev-trunk",
     "wpackagist-theme/wp-bootstrap-starter": "2.4.8"
   },
-  "extra": {
-     "webroot-dir": ".",
-     "webroot-package": "johnpbloch/wordpress-core"
+  "extra":{
+    "installer-paths":{
+      "./wordpress/": ["wpackagist-plugin/akismet"],
+      "./wordpress/": ["wpackagist-plugin/captcha"],
+      "./wordpress/": ["wpackagist-plugin/wordfence"],
+      "./wordpress/": ["wpackagist-plugin/woocommerce"],
+      "./wordpress/": ["wpackagist-plugin/tailor"],
+      "./wordpress/": ["wpackagist-plugin/tailor-advanced"],
+      "./wordpress/": ["wpackagist-plugin/tailor-portfolio"],
+      "./wordpress/": ["wpackagist-plugin/tailor-woocommerce"],
+      "./wordpress/": ["wpackagist-theme/wp-bootstrap-starter"]
+    }
   }
 }
