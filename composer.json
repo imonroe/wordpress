@@ -42,4 +42,8 @@
     "wpackagist-plugin/tailor-woocommerce": "dev-trunk",
     "wpackagist-theme/wp-bootstrap-starter": "2.4.8"
   }
+  "extra": {
+     "webroot-dir": ".",
+     "webroot-package": "johnpbloch/wordpress-core"
+  }
 }
